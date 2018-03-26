@@ -3,6 +3,7 @@ import os
 import sys
 
 if __name__ == "__main__":
+    # manage.py가 실행되면 config.settings가 실행된다.
     os.environ.setdefault("DJANGO_SETTINGS_MODULE", "config.settings")
     try:
         from django.core.management import execute_from_command_line
