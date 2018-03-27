@@ -13,3 +13,5 @@ ALLOWED_HOSTS = [
     'localhost',
 ]
 
+
+WSGI_APPLICATION = 'config.wsgi.local.application'

@@ -37,6 +37,12 @@ SECRET_PRODUCTION = os.path.join(SECRET_DIR, 'production.json')
 secrets = json.loads(open(SECRET_BASE, 'rt').read())
 
 SECRET_KEY = secrets['SECRET_KEY']
+
+# AWS
+AWS_ACCESS_KEY_ID = secrets['AWS_ACCESS_KEY_ID']
+AWS_SECRET_ACCESS_KEY = secrets['AWS_SECRET_ACCESS_KEY']
+AWS_STORAGE_BUCKET_NAME = secrets['AWS_STORAGE_BUCKET_NAME']
+
 AUTH_USER_MODEL = 'members.User'
 
 # Application definition
@@ -49,6 +55,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'raven.contrib.django.raven_compat',
+    'storages',
+
     'members',
 
 ]
