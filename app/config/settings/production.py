@@ -7,6 +7,7 @@ DEBUG = False
 ALLOWED_HOSTS = [
     'localhost',
     '.amazonaws.com',
+    '.elasticbeanstalk.com',
 ]
 
 # Media(user-uploaded file)을 위한 스토리지

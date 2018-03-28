@@ -13,10 +13,10 @@ INSTALLED_APPS += [
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    '.amazonaws.com',
     'localhost',
+    '.amazonaws.com',
+    '.elasticbeanstalk.com',
 ]
-
 
 # Media(user-uploaded file)을 위한 스토리지
 DEFAULT_FILE_STORAGE = 'config.storage.DefaultFileStorage'

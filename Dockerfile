@@ -1,16 +1,6 @@
 FROM            ygh131/oh_team_docker_dev:base
 MAINTAINER      ygh131test@gmail.com
 
-
-RUN             apt-get -y update
-RUN             apt-get -y dist-upgrade
-RUN             apt-get -y install nginx supervisor build-essential
-
-COPY            .requirements /srv/.requirements
-
-WORKDIR         /srv
-RUN             pip install -r /srv/.requirements/production.txt
-
 ENV             BUILD_MODE             production
 ENV             DJANGO_SETTINGS_MODULE config.settings.${BUILD_MODE}
 
@@ -24,6 +14,8 @@ RUN             ln -sf /etc/nginx/sites-available/nginx-app.conf /etc/nginx/site
 
 RUN             cp /srv/project/.config/${BUILD_MODE}/supervisord.conf /etc/supervisor/conf.d/
 
+
 CMD             pkill nginx; supervisord -n
 
+# eb에서 프록시로 연결할 port를 열어줌
 EXPOSE          80
