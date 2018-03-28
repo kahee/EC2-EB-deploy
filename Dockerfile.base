@@ -1,10 +1,12 @@
-FROM        python:3.6.4
+FROM            python:3.6.4-slim
+MAINTAINER      ygh131test@gmail.com
 
-RUN         apt-get -y update
-RUN         apt-get -y dist-upgrade
-RUN     apt-get -y install nginx supervisor
 
-COPY        . /srv/project
-WORKDIR     /srv/project
-RUN         pip install -r requirements.txt
--n
+RUN             apt-get -y update
+RUN             apt-get -y dist-upgrade
+RUN             apt-get -y install nginx supervisor build-essential
+
+COPY            .requirements /srv/.requirements
+
+WORKDIR         /srv
+RUN             pip install -r /srv/.requirements/production.txt
