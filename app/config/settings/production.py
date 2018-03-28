@@ -5,6 +5,7 @@ DATABASES = secrets_base['DATABASES']
 DEBUG = False
 
 ALLOWED_HOSTS = [
+    'localhost',
     '.amazonaws.com',
 ]
 

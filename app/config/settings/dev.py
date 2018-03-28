@@ -7,6 +7,7 @@ DATABASES = secrets_base['DATABASES']
 
 INSTALLED_APPS += [
     'django_extensions',
+    'storages',
 ]
 
 DEBUG = True

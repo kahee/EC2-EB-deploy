@@ -42,6 +42,9 @@ SECRET_KEY = SECRETS['SECRET_KEY']
 AWS_ACCESS_KEY_ID = SECRETS['AWS_ACCESS_KEY_ID']
 AWS_SECRET_ACCESS_KEY = SECRETS['AWS_SECRET_ACCESS_KEY']
 AWS_STORAGE_BUCKET_NAME = SECRETS['AWS_STORAGE_BUCKET_NAME']
+AWS_DEFAULT_ACL = 'private'
+AWS_S3_REGION_NAME = 'ap-northeast-2'
+AWS_S3_SIGNATURE_VERSION = 's3v4'
 
 AUTH_USER_MODEL = 'members.User'
 
@@ -55,7 +58,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'raven.contrib.django.raven_compat',
-    'storages',
 
     'members',
 
