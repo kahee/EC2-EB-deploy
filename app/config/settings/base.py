@@ -34,14 +34,14 @@ SECRET_BASE = os.path.join(SECRET_DIR, 'base.json')
 SECRET_LOCAL = os.path.join(SECRET_DIR, 'local.json')
 SECRET_DEV = os.path.join(SECRET_DIR, 'dev.json')
 SECRET_PRODUCTION = os.path.join(SECRET_DIR, 'production.json')
-secrets = json.loads(open(SECRET_BASE, 'rt').read())
+SECRETS = json.loads(open(SECRET_BASE, 'rt').read())
 
-SECRET_KEY = secrets['SECRET_KEY']
+SECRET_KEY = SECRETS['SECRET_KEY']
 
 # AWS
-AWS_ACCESS_KEY_ID = secrets['AWS_ACCESS_KEY_ID']
-AWS_SECRET_ACCESS_KEY = secrets['AWS_SECRET_ACCESS_KEY']
-AWS_STORAGE_BUCKET_NAME = secrets['AWS_STORAGE_BUCKET_NAME']
+AWS_ACCESS_KEY_ID = SECRETS['AWS_ACCESS_KEY_ID']
+AWS_SECRET_ACCESS_KEY = SECRETS['AWS_SECRET_ACCESS_KEY']
+AWS_STORAGE_BUCKET_NAME = SECRETS['AWS_STORAGE_BUCKET_NAME']
 
 AUTH_USER_MODEL = 'members.User'
 
@@ -123,7 +123,7 @@ USE_TZ = True
 
 # Sentry
 RAVEN_CONFIG = {
-    "dsn": secrets["dsn"],
+    "dsn": SECRETS["dsn"],
     "release": "raven.fetch_git_sha(os.path.abspath(os.pardir))"
 }
 LOGGING = {
